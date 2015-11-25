@@ -1,4 +1,4 @@
-package Calc;
+
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;
@@ -13,9 +13,9 @@ public class CalculatorClient {
 		if(args.length != 3) {
 			System.err.println(">>> Syntax : java CalculatorClient operand1 operator operand2");
 		}
-//		if(System.getSecurityManager() == null) {
-//			System.setSecurityManager(new RMISecurityManager());
-//		}
+		if(System.getSecurityManager() == null) {
+			System.setSecurityManager(new RMISecurityManager());
+		}
 		int valueA = Integer.parseInt( args[ 0 ] );
 		int valueB = Integer.parseInt( args[ 2 ] );
 		char operator = args[ 1 ].charAt( 0 );
